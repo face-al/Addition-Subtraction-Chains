@@ -2,8 +2,10 @@ import math as m
 import numpy as np
 
 def floor(num):
-    m.floor(num)
-    return num
+    return m.floor(num)
+
+def ceil(num):
+    return m.ceil(num)
 
 def NAF(x):
     if x == 0:
@@ -12,7 +14,7 @@ def NAF(x):
     return NAF( (x-z) // 2 ) + [z]
 
 def product(v,w):
-    intermediate_result = np.multiply(v,w).tolist()
+    intermediate_result = np.multiply(w,v[-1]).tolist()
     v.extend(intermediate_result)
     return v
 
@@ -20,27 +22,35 @@ def addition(v,j):
     v.append(v[-1]+j)
     return v
 
-def minchain(n):
-    l = len(n)
-    if n == 2**l:
-        return [2**i for i in range(l)]
-    if n == 3:
-        return [1,2,3]
-    return chain(n, 2**m.log(n/2))
-
 def log_2(x):
-    m.log2(x)
-    return x
+    result = 0
+    while x > 1:
+        x >>= 1
+        result += 1
+    return result
 
 def alpha(n):
-    return floor(n / 2**m.ceil(floor(log_2(n)/2)))
-    
+    fraction = 1 << int(ceil(floor(log_2(n))/2))
+    return floor(n/fraction)
+
+def minchain(n):
+    l = n.bit_length() - 1 
+    if n == 1<<l:
+        return [2**(i) for i in range(l+1)]
+    if n == 3:
+        return [1,2,3]
+    return chain(n, 1 << floor(log_2(int(n/2))))
+
+  
 def chain(n,k):
-    q, r = floor(n/k), n % k
+    q = floor(n/k)
+    r = n % k
     if r == 0:
         return product(minchain(k),minchain(q))
     else:
-        return addition(product(chain(k,r)+ minchain(q)), r)
+        min_ac_chain = addition(product(chain(k,r),minchain(q)),r)
+        min_ac_chain = [*set(min_ac_chain)]
+        return min_ac_chain
 
 
 
