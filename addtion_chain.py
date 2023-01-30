@@ -46,11 +46,9 @@ def chain(n,k):
     q = floor(n/k)
     r = n % k
     if r == 0:
-        return product(minchain(k),minchain(q))
+        return list(set(product(minchain(k),minchain(q))))
     else:
-        min_ac_chain = addition(product(chain(k,r),minchain(q)),r)
-        min_ac_chain = [*set(min_ac_chain)]
-        return min_ac_chain
+        return list(set(addition(product(chain(k,r),minchain(q)),r)))
 
 
 
