@@ -13,7 +13,7 @@ if __name__ == "__main__":
     v = [10, 9, 7, 10, 5]
     w = [7, 4 , 8, 2, 5]
     result = ac.product(v,w)
-    print("The XOR of v and w is %s" % result)
+    assert(w,v)
     
     #test case for ac.addition (addition) refer to Doche p.196
     j = 10

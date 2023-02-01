@@ -40,7 +40,6 @@ def minchain(n):
     if n == 3:
         return [1,2,3]
     return chain(n, 1 << floor(log_2(int(n/2))))
-
   
 def chain(n,k):
     q = floor(n/k)
