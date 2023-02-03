@@ -18,11 +18,7 @@ if __name__ == "__main__":
     #test case for ac.addition (addition) refer to Doche p.196
     j = 10
     print(ac.addition(v,j))
-    
-    # #test case in example 9.37
-    # n = 87
-    # alpha = ac.alpha(87)
-    # print(ac.chain(n,alpha))
+   
     
     # #Case when n == 2**l, so n = 256, should return [1,...,2**l]
     n, alpha = 29, ac.alpha(256)

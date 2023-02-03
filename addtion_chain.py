@@ -45,9 +45,10 @@ def chain(n,k):
     q = floor(n/k)
     r = n % k
     if r == 0:
-        return list(set(product(minchain(k),minchain(q))))
+        return sorted(list(set(product(minchain(k),minchain(q)))))
     else:
-        return list(set(addition(product(chain(k,r),minchain(q)),r)))
+         return sorted(list(set(addition(product(chain(k,r),minchain(q)),r))))
+         
 
 
 
