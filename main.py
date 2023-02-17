@@ -25,6 +25,9 @@ if __name__ == "__main__":
     print("n is %d and alpha is %d" % (n,alpha))
     print(ac.chain(n,alpha))
     
+    print(len([1, 2, 4, 8, 10, 11, 18, 36, 47, 55, 91, 109, 117, 226, 343, 434, 489, 499, 933, 1422, 2844, 5688, 5689]))
+    a = 26235947428953663183191
+    print(a.bit_length())
     #test with numpy
     # v = [4,3,2,5]
     # w = [4,8,1]

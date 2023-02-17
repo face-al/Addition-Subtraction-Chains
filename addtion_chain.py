@@ -7,11 +7,6 @@ def floor(num):
 def ceil(num):
     return m.ceil(num)
 
-def NAF(x):
-    if x == 0:
-        return []
-    z = 0 if x % 2 == 0 else 2 - (x % 4)
-    return NAF( (x-z) // 2 ) + [z]
 
 def product(v,w):
     intermediate_result = np.multiply(w,v[-1]).tolist()
