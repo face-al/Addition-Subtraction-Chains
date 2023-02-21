@@ -1,6 +1,6 @@
 import unittest
 
-import addtion_chain as ac
+import contfrac_addchain as ac
 
 class test_continued_fraction(unittest.TestCase):
     

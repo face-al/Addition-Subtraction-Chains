@@ -1,6 +1,6 @@
 # This is a setup to test my understanding
 
-import addtion_chain as ac
+import contfrac_addchain as ac
 import numpy as np
 
 if __name__ == "__main__":
