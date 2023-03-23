@@ -14,8 +14,6 @@ def sign(n):
     else:
         return 1
 
-
-
 # Python program to demonstrate working of extended
 # Euclidean Algorithm from geeks for geeks
 # function for extended Euclidean Algorithm
@@ -23,7 +21,7 @@ def gcdExtended(a, b):
     # Base Case
     if a == 0 :
         return b,0,1
-             
+
     gcd,x1,y1 = gcdExtended(b%a, a)
      
     # Update x and y using results of recursive
@@ -37,16 +35,14 @@ def gcdExtended(a, b):
 #this is an experimental gcf (it alternates between example 2.4 and 2.5, but produces correct result)
 def gcf(n,k):
     gcd, a1, a2 = gcdExtended(n,k) # find a more elgant way to just extract a1 and a2 without gcd
-    if a1 < 0:
-        u1 = (-1)*a1*k
-    else: 
-        u1 = a1*k
-        
-    if (a1 < 0 and a2 < 0) or (a1 > 0 and a2 > 0):
-        u2 = (-1)*(a2/a2)
-        u2 = int(u2)
-    elif (a1 < 0 and a2 > 0) or (a1 > 0 and a2 < 0):
-        u2 = int((a2/a1))
+    u1 = a1*k
+    
+    # if (a1 < 0 and a2 < 0) or (a1 > 0 and a2 > 0):
+    #     u2 = (-1)*(a2/a1)
+    #     u2 = int(u2)
+    # elif (a1 < 0 and a2 > 0) or (a1 > 0 and a2 < 0):
+    #     u2 = (-1)*int(a2/a1)
+    u2 = (-1)*int(a2/a1)
     u = sorted([u1,u2])
     return u
 

@@ -1,11 +1,9 @@
 # import addtion_chain as ac
-import contfrac_addchain as cf
-import math as m
-import numpy as np
+import contfrac as cf
 
+#TODO: make sure to choose a strategy later.
 def minchain(n):
     l = n.bit_length() - 1 
-    res = []
     if n == 1<<l:
         return [2**(i) for i in range(l+1)]
     if n == 3:
@@ -37,14 +35,13 @@ def chain(n,k):
     if(u[0] < 0):
         x2 = cf.subtraction(x2,q0)
         print("x2: (subtraction) ", x2)
-
     else:
         x2 = cf.addition(x2,q0)
         print("x2: (addition)", x2)
 
-    return x2
+    return (x2)
 
-print(chain(55,28))
+print(chain(55,7))
 
 
 
