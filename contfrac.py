@@ -42,7 +42,10 @@ def gcf(n,k):
     #     u2 = int(u2)
     # elif (a1 < 0 and a2 > 0) or (a1 > 0 and a2 < 0):
     #     u2 = (-1)*int(a2/a1)
-    u2 = (-1)*int(a2/a1)
+    if a1 == 0:
+        u2 = 0 
+    else:
+        u2 = (-1)*int(a2/a1)
     u = sorted([u1,u2])
     return u
 
@@ -92,3 +95,4 @@ def chain(n,k):
 
 
 
+# print(chain(28,7))
